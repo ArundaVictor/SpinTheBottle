@@ -39,6 +39,25 @@ public class MainActivity extends AppCompatActivity {
             rotate.setDuration(5000);
             rotate.setFillAfter(true);
 
+            rotate.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    spinning = true;
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+
+                    spinning = false;
+
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
             lastDir = newDir;
             spinBottle.startAnimation(rotate);
         }
